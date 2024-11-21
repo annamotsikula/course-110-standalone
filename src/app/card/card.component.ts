@@ -2,13 +2,14 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Product } from '../core/interfaces/product.interface';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { LowstockDirective } from '../core/directives/lowstock.directive';
+import { TruncatePipe } from '../core/pipes/truncate.pipe';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
   standalone: true,
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, LowstockDirective]
+  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, LowstockDirective, TruncatePipe]
 })
 export class CardComponent implements OnInit, OnChanges {
   @Input({required: true}) product!: Product
